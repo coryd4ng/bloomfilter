@@ -34,8 +34,8 @@ If we use too many different hash functions, the amount of collisions will incre
 'p' is the acceptable probability of a collision or false positive.
 
 ## Exercises
-### 1. Implement a BloomFilterTable class in pseudo-classical style.
+### 1.Implement a BloomFilterTable class in pseudo-classical style.
 
-### 2. Make the following properties appear on all instances.
+### 2.Make the following properties appear on all instances.
 * An ```.insert()``` method, which takes any string and stores the numeric value of '1' at the index, given by the hash function(s).
 * A ```.contain()``` method, which takes any string and returns a boolean reflecting whether it can be found in the set.

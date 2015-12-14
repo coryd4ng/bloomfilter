@@ -1,10 +1,10 @@
 var BloomFilterTable = function(n, p) {
   // Initialize storage.
-  this.storage;
+  this.storage = [];
   // Calculate the optimal set size.
-  this.max;
+  this.max = Math.abs( ( n * Math.log(p) ) / ( Math.pow( Math.log(2), 2) ) );
   // Calculate the optimal number of hash functions.
-  this.k;
+  this.k = (this.max/n) * Math.log(2);
   // Object to store functions.
   this.func = {};
 
@@ -16,10 +16,23 @@ var BloomFilterTable = function(n, p) {
 
 BloomFilterTable.prototype.insert = function(key) {
 
+  for (var prop in this.func) {
+    var i = this.func[prop].get(key);
+    this.storage[i] = 1;
+  }
+
 };
 
 BloomFilterTable.prototype.retrieve = function(key) {
 
+  for (var prop in this.func) {
+    var i = this.func[prop].get(key);
+    if (this.storage[i] !== 1) {
+        return false;
+    }
+  }
+  return true;
+  
 };
 
 
