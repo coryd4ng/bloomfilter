@@ -39,3 +39,6 @@ If we use too many different hash functions, the amount of collisions will incre
 ### 2.Make the following properties appear on all instances.
 * An ```.insert()``` method, which takes any string and stores the numeric value of '1' at the index, given by the hash function(s).
 * A ```.contain()``` method, which takes any string and returns a boolean reflecting whether it can be found in the set.
+
+#####Special Thanks
+Thanks to [Jonathan Kvicky](https://github.com/jonkvix) for contributing to the sprint.
